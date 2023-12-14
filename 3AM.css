@@ -151,6 +151,12 @@
                     background-color: var(--accent);
                 }
 
+                /*Recolor the background of stickers in the sticker picker that dont take up the full 1:1 ratio*/
+                [id^="sticker-picker-grid"]
+                {
+                    background-color: var(--bgcol);
+                }
+
                 
         /*ROUNDING*/
 
