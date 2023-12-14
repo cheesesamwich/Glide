@@ -234,6 +234,12 @@
                     padding-right: 10px;
                 }
 
+                /*Yeet hypesquad badges (who cares)*/
+                [aria-label*="HypeSquad"]
+                {
+                    display: none;
+                }
+
 
 
         /*STYLING*/
