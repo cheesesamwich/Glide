@@ -17,6 +17,7 @@
 
         /*Fonts*/
         @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
 
 :root
 {
@@ -240,7 +241,8 @@
                 /*Change the font*/
                 :root
                 {
-                --font-primary: 'Nunito' !important;
+                    --font-primary: 'Nunito' !important;
+                    --font-code: "Fira Code"; 
                 }
 
                 /*Round all status symbols. basically does what that one plugin does but easier*/
