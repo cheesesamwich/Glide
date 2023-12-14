@@ -227,6 +227,12 @@
                 {
                     display: none;
                 }
+                /*pad the message bar right slightly. Not sure what caused the buttons to flow out of it, might be something in the theme :shrug:*/
+                
+                .inner__9fd0b
+                {
+                    padding-right: 10px;
+                }
 
 
 
