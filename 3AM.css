@@ -10,7 +10,13 @@
         /*Fix a bug where hovering on a mention message causes it to turn yellow*/
         /*Darken and round spotify listen along invites*/
         /*Fix missing comments on some class recolor lines*/
-        /*Swap the font to Nunito*/
+
+
+
+    /*IMPORTS*/
+
+        /*Fonts*/
+        @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
 :root
 {
@@ -231,10 +237,10 @@
                    filter: drop-shadow(0px 0px 3px var(--glowcol));
                 }
 
-                /*Change the font (definitely gonna change this)*/
+                /*Change the font*/
                 :root
                 {
-                --font-primary: sans-serif !important;
+                --font-primary: 'Nunito' !important;
                 }
 
                 /*Round all status symbols. basically does what that one plugin does but easier*/
