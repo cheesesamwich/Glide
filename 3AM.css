@@ -11,10 +11,6 @@
         /*Darken and round spotify listen along invites*/
         /*Fix missing comments on some class recolor lines*/
 
-        body
-        {
-            display:initial !important;
-        }
 :root
 {
 
@@ -235,7 +231,20 @@
                 }
 
                 /*Change the font*/
+                @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
                 :root
                 {
                 --font-primary: 'Nunito' !important;
+                }
+
+                /*Round all status symbols. basically does what that one plugin does but easier*/
+                .pointerEvents__33f6a
+                {
+                    mask: url(#svg-mask-status-online);
+                }
+
+                /*Change the home icon to the moon (ignore how shitty the asset is plsplsplspls :3)*/
+                [aria-label="Direct Messages"] .childWrapper__01b9c
+                {
+                    content: url(https://github.com/cheesesamwich/3AM/blob/main/icon.png?raw=true);
                 }
