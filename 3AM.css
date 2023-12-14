@@ -237,7 +237,7 @@
                 /*Yeet hypesquad badges (who cares)*/
                 [aria-label*="HypeSquad"]
                 {
-                    display: none;
+                    display: none !important;
                 }
 
 
