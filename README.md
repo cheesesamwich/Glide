@@ -26,7 +26,7 @@ To install 3AM on Vencord:
 
 Currently, there is no documented support for any other modded Discord clients. The theme has been tested on Vencord, but it's expected to work fine elsewhere.
 
-#### Privacy Blur Configuration (Note: Configuring the privacy blur feature may be more complex compared to the initial simplicity of the theme setup.)
+#### Privacy Blur Configuration (Note: Privacy blur setup may be more complex than the initial theme configuration.)
 
 To enable privacy blur:
 1. Download the theme locally to your Downloads folder.
