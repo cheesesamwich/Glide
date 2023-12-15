@@ -33,7 +33,8 @@
         --mentioncol: rgb(0, 0, 0);
         --mentionhighlightcol: rgb(0, 0, 0);
         --linkcol: rgb(95, 231, 255);
-        
+        /*Privacy blur, set to 0px to disable (recommended is 5px to enable)*/
+        --privacy-blur: 0px; 
         /*logic variables*/
 
         --fixedanimspeed: calc(var(--animspeed) - 0.1s);
@@ -214,6 +215,27 @@
                     opacity: 1;
                 
                 }
+
+                  
+                /*Privacy blur*/
+                .header__39b23,
+                .container__590e2,
+                .title_b7d661,
+                [aria-label="Members"],
+                .privateChannels__93473 {
+                  filter: blur(0px); 
+                  transition: filter 0.2s ease-in-out; 
+                }
+                
+                body:not(:hover) .header__39b23,
+                body:not(:hover) .container__590e2,
+                body:not(:hover) .title_b7d661,
+                body:not(:hover) [aria-label="Members"],
+                body:not(:hover) .privateChannels__93473 {
+                  filter: blur(var(--privacy-blur)); 
+                }
+                
+                  
 
 
         /*CONTENT*/
