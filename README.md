@@ -33,5 +33,5 @@ To enable privacy blur:
 2. Open it in your preferred IDE.
 3. Modify the `--privacy-blur` variable to your liking in the CSS file.
 
-   (Please be aware that this method is not ideal, and I currently don't recommend using this feature.)
+(Please be aware that this method is not ideal, and I currently don't recommend using this feature.)
 
