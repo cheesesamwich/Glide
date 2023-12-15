@@ -19,10 +19,7 @@ To install 3AM on Vencord:
 1. Navigate to settings.
 2. Go to themes.
 3. Click on online themes.
-4. Paste the following URL:
-   ```
-   https://raw.githubusercontent.com/cheesesamwich/3AM/main/3AM.css
-   ```
+4. Paste the following URL: `https://raw.githubusercontent.com/cheesesamwich/3AM/main/3AM.css`
 
 
 #### Other Client Installation
