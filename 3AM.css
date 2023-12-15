@@ -248,8 +248,8 @@
                 {
                     display: none;
                 }
-                /*pad the message bar right slightly. Not sure what caused the buttons to flow out of it, might be something in the theme :shrug:*/
-                
+
+                /*pad the message bar right slightly. Not sure what caused the buttons to flow out of it, might be something in the theme :shrug:*/         
                 .inner__9fd0b
                 {
                     padding-right: 10px;
@@ -259,6 +259,12 @@
                 [aria-label*="HypeSquad"]
                 {
                     display: none !important;
+                }
+
+                /*Hide icon on file uploading status*/
+                .icon__30aa7
+                {
+                    display: none;
                 }
 
 
