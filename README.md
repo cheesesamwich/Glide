@@ -1,23 +1,37 @@
-# 3AM
-## Its 3AM. No Light, Just Night.
+# 3AM Theme
+## It's 3AM. No Light, Just Night.
 
 ### Features
 
 - Clean rounded style
 - Consistent true black
-- Minimal issues (See the to-do list in the css file)
+- Minimal issues (Refer to the to-do list in the CSS file)
 - Easy and simple customizability
-- Support for select discord experiments
+- Support for select Discord experiments
 - Written with simplicity and understandability in mind
+- Privacy Blur
 
-### Installation
+### Instructions
 
-#### Vencord
-##### To install 3AM on Vencord, Simply navigate to settings, themes, online themes, and paste in:
+#### Vencord Installation
 
-```
-https://raw.githubusercontent.com/cheesesamwich/3AM/main/3AM.css
-```
+To install 3AM on Vencord:
+1. Navigate to settings.
+2. Go to themes.
+3. Click on online themes.
+4. Paste the following URL:
+   ```
+   https://raw.githubusercontent.com/cheesesamwich/3AM/main/3AM.css
+   ```
 
-#### Other Clients
-##### Currently there is no documented supports for any other modded discord clients. I only personally use vencord- but i dont doubt that 3AM will work fine anywhere else.
+
+#### Other Client Installation
+
+Currently, there is no documented support for any other modded Discord clients. The theme has been tested on Vencord, but it's expected to work fine elsewhere.
+
+#### Privacy Blur Configuration
+
+To enable privacy blur:
+1. Download the theme locally to your Downloads folder.
+2. Open it in your preferred IDE.
+3. Modify the `--privacy-blur` variable to your liking in the CSS file.
