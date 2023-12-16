@@ -157,7 +157,7 @@
                 }
 
                 
-        /*ROUNDING*/
+        /*ROUNDING (rounding)*/
 
                 /*round message bar, some buttons, dm list button, new messages notif bar, channel buttons, emoji menu search bar(in that order)*/
                 .scrollableContainer__33e06, .button_afdfd9, .interactive__776ee, .newMessagesBar__8b6d7, .link__95dc0, .searchBar__8f956
@@ -176,7 +176,7 @@
                 }
                 
 
-        /*ANIMATIONS*/
+        /*ANIMATIONS (animations)*/
 
 
                 /*slightly move messages right when hovered*/
@@ -217,7 +217,7 @@
                   
 
 
-        /*CONTENT*/
+        /*CONTENT (Typically changing values or hiding elements)*/
 
                 /*Hide most of the ugly useless scrollbars*/
                 ::-webkit-scrollbar 
@@ -241,7 +241,7 @@
                 /*Remove the buttons at the bottom of the user pop out (seriously, who wanted this?)*/
                 .addFriendSection__413d3
                 {
-                display: none;
+                    display: none;
                 }
                 
                 /*No more useless spotify activity header*/
@@ -270,7 +270,7 @@
 
 
 
-        /*STYLING*/
+        /*STYLING (Modification of content to fit the theme)*/
         
                 /*add a soft glow to message bar contents, user panel, dms, channel names (in that order)*/
                 .inner__9fd0b, .button__4f306, .layout__59abc, .name__8d1ec
@@ -295,4 +295,46 @@
                 [aria-label="Direct Messages"] .childWrapper__01b9c
                 {
                     content: url(https://github.com/cheesesamwich/3AM/blob/main/icon.png?raw=true);
+                }
+
+                /*all this is maxwell loading screen*/
+                .ready__61f2f
+                {
+                    scale: 0;
+                }
+
+                .content__0e954::after 
+                {
+                    content: url(https://media.tenor.com/gexfZzl4ZRsAAAAi/maxwell-cat.gif);
+                    position: relative;
+                    display: inline-block;
+                    top: -425px;
+                    left: 100px;
+                    zoom: 0.5;
+                }
+                
+                .tipTitle_a7615c 
+                {
+                    text-transform: none;
+                    font-size: 0px;
+                    font-weight: 200
+                }
+
+                .tipTitle_a7615c::after 
+                {
+                    content: "Loading 3AM";
+                    font-size: 18px
+                }
+                
+                .tip__6e299
+                {
+                    text-transform: none;
+                    font-size: 0px;
+                    font-weight: 500
+                }
+
+                .tip__6e299::after 
+                {
+                    content: "While you wait, heres maxwell!";
+                    font-size: 15px
                 }
