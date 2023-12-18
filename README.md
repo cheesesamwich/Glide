@@ -5,10 +5,19 @@
 
 - Clean rounded style
 - Consistent true black
-- Minimal issues (Refer to the to-do list in the CSS file)
+- Minimal issues (Refer to the planned or potential features section)
 - Easy and simple customizability
 - Support for select Discord experiments
 - Written with simplicity and understandability in mind
+
+#### Planned Or Potential Features
+##### Ideas
+- Transfer 3AM to a theme for added support and customisability (eg: color and value config in app) (i'll definitely do this if i can, but vencord plugin docs are bleh so we'll see i guess)
+- Darken and round spotify listen along invites
+##### Bugs
+- Hovering on a mention message causes it to turn yellow
+- Missing comments on some class recolor lines
+- Some online status indicators are vertically stretched
 
 ### Instructions
 
