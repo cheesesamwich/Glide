@@ -12,6 +12,29 @@
 
 ### Instructions
 
+#### Original Conditions
+##### These are all of the relevant tools used during the testing of the theme, support is guaranteed and intented for these services; for the best experience, you might want to replicate this setup.
+###### Clients
+- Vencord
+- OpenAsar
+###### Plugins (Vencord)
+
+####### Functional
+- Decor
+- GameActivityToggle
+- Experiments (More support in the future)
+- MessageLogger
+- PinDMs
+- VoiceMessages
+####### Aesthetic
+- CallTimer
+- ForceOwnerCrown
+- MemberCount
+- NoMosaic
+- MutualGroupDMs
+- PlainFolderIcon
+- ShikiCodeblocks
+
 #### Vencord Installation
 
 To install 3AM on Vencord:
