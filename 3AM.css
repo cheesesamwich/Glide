@@ -7,10 +7,7 @@
 
  
     /*TO DO*/
-        /*Fix a bug where hovering on a mention message causes it to turn yellow*/
-        /*Darken and round spotify listen along invites*/
-        /*Fix missing comments on some class recolor lines*/
-        /*Fix an issue where some online status indicators are vertically stretched*/
+
 
 
     /*IMPORTS*/
@@ -266,6 +263,12 @@
                 {
                     display: none;
                 }
+                
+                /*hide the play button while a soundmoji is playing*/
+                .playing_c91456 [viewBox="0 0 24 24"] 
+                {
+                    display:none;
+                }
 
 
 
@@ -364,4 +367,3 @@
                     text-shadow: 0px 0px 3px var(--highlightcol);
                 }
                 
-
