@@ -12,7 +12,7 @@
 
 ### Planned Or Potential Features
 #### Ideas
-- Transfer 3AM to a theme for added support and customisability (eg: color and value config in app) (i'll definitely do this if i can, but vencord plugin docs are bleh so we'll see i guess)
+- Transfer 3AM to a plugin for added support and customisability (eg: color and value config in app) (i'll definitely do this if i can, but vencord plugin docs are bleh so we'll see i guess)
 - Darken and round spotify listen along invites
 #### Bugs
 - Hovering on a mention message causes it to turn yellow
