@@ -14,19 +14,16 @@
 
 #### Original Conditions
 ##### These are all of the relevant tools used during the testing of the theme, support is guaranteed and intented for these services; for the best experience, you might want to replicate this setup.
-###### Clients
+##### Clients
 - Vencord
 - OpenAsar
-###### Plugins (Vencord)
-
-####### Functional
+##### Plugins (Vencord)
 - Decor
 - GameActivityToggle
 - Experiments (More support in the future)
 - MessageLogger
 - PinDMs
 - VoiceMessages
-####### Aesthetic
 - CallTimer
 - ForceOwnerCrown
 - MemberCount
