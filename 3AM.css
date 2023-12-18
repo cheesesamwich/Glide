@@ -338,3 +338,17 @@
                     content: "While you wait, heres maxwell!";
                     font-size: 15px
                 }
+                /*Scale the profile picture setter up a bit*/
+                .focusLock__10aa5
+                {
+                    transform: scale(1.3);
+                }
+
+                /*pfp uploader crosshair*/
+                .overlayAvatar__7ca47
+                {
+                background-image: url(https://raw.githubusercontent.com/cheesesamwich/3AM/main/crosshair.png);
+                background-repeat: no-repeat;
+                background-position-x: 50%;
+                background-position-y: 50%;
+                }
