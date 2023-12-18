@@ -338,11 +338,6 @@
                     content: "While you wait, heres maxwell!";
                     font-size: 15px
                 }
-                /*Scale the profile picture setter up a bit*/
-                .focusLock__10aa5
-                {
-                    transform: scale(1.3);
-                }
 
                 /*pfp uploader crosshair*/
                 .overlayAvatar__7ca47
