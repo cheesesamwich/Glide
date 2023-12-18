@@ -18,6 +18,7 @@
 - Hovering on a mention message causes it to turn yellow
 - Missing comments on some class recolor lines
 - Some online status indicators are vertically stretched
+- Soundmoji experiment search button is the wrong color
 
 ### Instructions
 
@@ -32,23 +33,3 @@ To install 3AM on Vencord:
 #### Other Client Installation
 
 Currently, there is no documented support for any other modded Discord clients. The theme has been tested on Vencord, but it's expected to work fine elsewhere.
-
-### Original Conditions
-#### These are all of the relevant tools used during the testing of the theme, support is guaranteed and intented for these services; for the best experience, you might want to replicate this setup.
-#### Clients
-- Vencord
-- OpenAsar
-#### Plugins (Included but not limited to)
-- Decor
-- GameActivityToggle
-- Experiments (More support in the future)
-- MessageLogger
-- PinDMs
-- VoiceMessages
-- CallTimer
-- ForceOwnerCrown
-- MemberCount
-- NoMosaic
-- MutualGroupDMs
-- PlainFolderIcon
-- ShikiCodeblocks
