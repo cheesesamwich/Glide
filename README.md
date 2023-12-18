@@ -38,7 +38,7 @@ Currently, there is no documented support for any other modded Discord clients. 
 #### Clients
 - Vencord
 - OpenAsar
-#### Plugins (Vencord)
+#### Plugins (Included but not limited to)
 - Decor
 - GameActivityToggle
 - Experiments (More support in the future)
