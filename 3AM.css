@@ -33,7 +33,7 @@
         --mentioncol: rgb(0, 0, 0);
         --mentionhighlightcol: rgb(0, 0, 0);
         --linkcol: rgb(95, 231, 255);
-        --highlightcol: rgb(14, 14, 14);
+        --highlightcol: rgb(95, 231, 255);
 
         /*logic variables*/
         --fixedanimspeed: calc(var(--animspeed) - 0.1s);
@@ -156,13 +156,6 @@
                 {
                     background-color: var(--bgcol);
                 }
-                /*change highlighted text color*/
-                ::selection 
-                {
-                    color: inherit;
-                    background: var(--highlightcol);
-                }
-                
         /*ROUNDING (rounding)*/
 
                 /*round message bar, some buttons, dm list button, new messages notif bar, channel buttons, emoji menu search bar(in that order)*/
@@ -354,4 +347,14 @@
                 background-position-y: 50%;
                 border-width: 2px;
                 }
+
+                /*change highlighted text color*/
+                ::selection 
+                {
+                    color: inherit;
+                    background-color: transparent;
+                    text-shadow: 0px 0px 3px var(--glowcol)
+                    background: var(--highlightcol);
+                }
+                
 
