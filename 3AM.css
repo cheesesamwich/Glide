@@ -33,6 +33,7 @@
         --mentioncol: rgb(0, 0, 0);
         --mentionhighlightcol: rgb(0, 0, 0);
         --linkcol: rgb(95, 231, 255);
+        --highlightcol: rgb(14, 14, 14);
 
         /*logic variables*/
         --fixedanimspeed: calc(var(--animspeed) - 0.1s);
@@ -155,7 +156,12 @@
                 {
                     background-color: var(--bgcol);
                 }
-
+                /*change highlighted text color*/
+                ::selection 
+                {
+                    color: inherit;
+                    background: var(--highlightcol);
+                }
                 
         /*ROUNDING (rounding)*/
 
@@ -348,3 +354,4 @@
                 background-position-y: 50%;
                 border-width: 2px;
                 }
+
