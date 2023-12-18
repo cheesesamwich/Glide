@@ -272,9 +272,17 @@
         /*STYLING (Modification of content to fit the theme)*/
         
                 /*add a soft glow to message bar contents, user panel, dms, channel names (in that order)*/
-                .inner__9fd0b, .button__4f306, .layout__59abc, .name__8d1ec
+                .inner__9fd0b .layout__59abc, .name__8d1ec
                 {
                    filter: drop-shadow(0px 0px 3px var(--glowcol));
+                }
+                [type="button"]
+                {
+                        transition: all 0.1s ease-in-out;
+                }
+                [type="button"]:hover
+                {
+                        filter: drop-shadow(0px 0px 3px var(--glowcol));
                 }
 
                 /*Change the font*/
