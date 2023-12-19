@@ -89,7 +89,7 @@
             --bg-overlay-app-frame: var(--bgcol);
 
             /*shop*/
-            --background-floating: --bgcol;
+            --background-floating: var(--bgcol);
 
             
             
