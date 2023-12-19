@@ -19,6 +19,7 @@
 - Missing comments on some class recolor lines
 - Some online status indicators are vertically stretched
 - Soundmoji experiment search button is the wrong color
+- The custom maxwell loading screen still displays keybind indicators
 
 ### Instructions
 
