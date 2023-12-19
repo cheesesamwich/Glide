@@ -272,6 +272,11 @@
                 {
                     display:none;
                 }
+                /*hide the public servers button on member list*/
+                [aria-label="Explore Discoverable Servers"]
+                {
+                    display: none;
+                }
 
 
 
@@ -370,4 +375,3 @@
                     background-color: transparent;
                     text-shadow: 0px 0px 3px var(--highlightcol);
                 }
-                
