@@ -88,6 +88,9 @@
             /*call thingy*/
             --bg-overlay-app-frame: var(--bgcol);
 
+            /*shop*/
+            --background-floating: --bgcol;
+
             
             
 
