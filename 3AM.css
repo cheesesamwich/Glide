@@ -298,11 +298,12 @@
                     --font-code: "Fira Code"; 
                 }
 
-                /*Round all status symbols. basically does what that one plugin does but easier*/
+                /*Round all status symbols. basically does what that one plugin does but easier (disabled because of a bug)
                 .pointerEvents__33f6a
                 {
                     mask: url(#svg-mask-status-online);
                 }
+                */
 
                 /*Change the home icon to the moon (ignore how shitty the asset is plsplsplspls :3)*/
                 [aria-label="Direct Messages"] .childWrapper__01b9c
