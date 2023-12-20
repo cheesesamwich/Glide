@@ -63,7 +63,7 @@
 
             /*color of the background of mention text*/
             --mention-background: var(--accent);
-            --background-mentioned-hover: var(--accent) !important;
+
 
         /*background based*/
         
@@ -91,6 +91,8 @@
 
             /*shop*/
             --background-floating: var(--bgcol);
+            --background-mentioned-hover: var(--accent) !important;
+            --background-mentioned: var(--accent) !important;
 
             
             
