@@ -158,8 +158,8 @@
                 }
         /*ROUNDING (rounding)*/
 
-                /*round message bar, some buttons, dm list button, new messages notif bar, channel buttons, emoji menu search bar(in that order)*/
-                .scrollableContainer__33e06, .button_afdfd9, .interactive__776ee, .newMessagesBar__8b6d7, .link__95dc0, .searchBar__8f956
+                /*round message bar, some buttons, dm list button, new messages notif bar, channel buttons, emoji menu search bar, context menus(in that order)*/
+                .scrollableContainer__33e06, .button_afdfd9, .interactive__776ee, .newMessagesBar__8b6d7, .link__95dc0, .searchBar__8f956, .menu_dc52c6
                 {
                     border-radius: 25px;
                 }
@@ -172,8 +172,7 @@
                 [class^="imageWr"], [data-type="sticker"], [class^="embed"]
                 {
                     border-radius: 20px;
-                }
-                
+                }      
 
         /*ANIMATIONS (animations)*/
 
@@ -277,7 +276,11 @@
                 {
                     display: none;
                 }
-
+                /*fix context menu being not symmetrical*/
+                .scroller__750f5
+                {
+                    padding: 6px 8px !important;
+                }                
 
 
         /*STYLING (Modification of content to fit the theme)*/
