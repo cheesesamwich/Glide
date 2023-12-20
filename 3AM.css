@@ -91,16 +91,13 @@
 
             /*shop*/
             --background-floating: var(--bgcol);
-            --background-mentioned-hover: var(--accent) !important;
-            --background-mentioned: var(--accent) !important;
+            --background-mentioned-hover: var(--bgcol) !important;
+            --background-mentioned: var(--bgcol) !important;
 
             
             
 
         /*other*/
-                            
-            /*mention background color*/
-            --background-mentioned: var(--mentioncol);
 
              /*mention side line color color*/
             --info-warning-foreground: var(--mentionhighlightcol);
