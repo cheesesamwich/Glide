@@ -63,6 +63,7 @@
 
             /*color of the background of mention text*/
             --mention-background: var(--accent);
+            --background-mentioned-hover: var(--accent);
 
         /*background based*/
         
