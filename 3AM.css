@@ -310,6 +310,24 @@
                     margin-top: 0px;
                 }
 
+                /*remove the unneccecary space on connections*/
+                .connectedAccountsColumn_fd2c41
+                {
+                    width: fit-content;
+                    padding-bottom: 10px;
+                }
+                /*remove the verified icon on connections*/
+                .connectedAccountVerifiedIcon_db6dbd
+                {
+                    display:none;
+                }
+                /*reposition the connection anchor*/
+                .connectedAccountName_f0a294 .anchor_c8ddc0 
+                {
+                    transform: translateY(1px);
+                    margin-left: 5px;
+                }   
+
 
         /*STYLING (Modification of content to fit the theme)*/
         
