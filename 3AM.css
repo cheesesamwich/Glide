@@ -158,8 +158,8 @@
                 }
         /*ROUNDING (rounding)*/
 
-                /*round message bar, some buttons, dm list button, new messages notif bar, channel buttons, emoji menu search bar, context menus(in that order)*/
-                .scrollableContainer__33e06, .button_afdfd9, .interactive__776ee, .newMessagesBar__8b6d7, .link__95dc0, .searchBar__8f956, .menu_dc52c6
+                /*round message bar, some buttons, dm list button, new messages notif bar, channel buttons, emoji menu search bar, context menus, account connections(in that order)*/
+                .scrollableContainer__33e06, .button_afdfd9, .interactive__776ee, .newMessagesBar__8b6d7, .link__95dc0, .searchBar__8f956, .menu_dc52c6, .connectedAccountContainer__23f00
                 {
                     border-radius: 25px;
                 }
@@ -173,43 +173,50 @@
                 {
                     border-radius: 20px;
                 }      
+                
+
 
         /*ANIMATIONS (animations)*/
 
 
                 /*slightly move messages right when hovered*/
-                .cozyMessage__64ce7 {
+                .cozyMessage__64ce7
+                 {
                     left: 0px;
                 
                     transition-duration: 0.2s;
                 }
-                .cozyMessage__64ce7:hover {
+                .cozyMessage__64ce7:hover 
+                {
                     left: 3px;
                 }
   
                 /*guild list collapse hover*/
-                .guilds__2b93a {
+                .guilds__2b93a
+                 {
                     width: 10px;
                     transition: width var(--fixedanimspeed) ease 0.1s, opacity var(--fixedanimspeed) ease 0.1s;
                     opacity: 0;
                 }
-                .guilds__2b93a:hover {
+                .guilds__2b93a:hover 
+                {
                     width: 65px;
                     opacity: 100;
                 }
                 
                 
                 /*member list collapse hover*/
-                .container_b2ce9c {
+                .container_b2ce9c 
+                {
                     width: 60px;
                     opacity: 0.2;
                     transition: width var(--fixedanimspeed) ease 0.1s, opacity var(--fixedanimspeed) ease 0.1s;
                 
                 }
-                .container_b2ce9c:hover {
+                .container_b2ce9c:hover 
+                {
                     width: 250px;
-                    opacity: 1;
-                
+                    opacity: 1;    
                 }
 
                   
@@ -290,6 +297,17 @@
                 [class="state_a85ac0 ellipsis__427eb textRow__4750e"]
                 {
                     display: none;
+                }
+                /*space the connections a bit better*/
+                .userInfoSection__1daf8
+                {
+                    margin-bottom: 0px;
+                    padding-bottom: 0px;
+                }
+
+                .connectedAccountContainer__23f00
+                {
+                    margin-top: 0px;
                 }
 
 
@@ -388,3 +406,9 @@
                     background-color: transparent;
                     text-shadow: 0px 0px 3px var(--highlightcol);
                 }
+                /*hide the line between connections and note*/
+                [class="connectedAccounts_dc0a56 userInfoSection__1daf8"]
+                {
+                    border-top: transparent !important;
+                }
+
