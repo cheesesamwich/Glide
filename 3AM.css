@@ -284,7 +284,7 @@
                 /*Hide the icon that displays what platform the user is listening with on spotify status*/
                 .platformIcon__05c5e
                 {
-                    display: none;
+                    display: none !important;
                 }
                 /*hide the album name on spotify statuses (who cares)*/
                 [class="state_a85ac0 ellipsis__427eb textRow__4750e"]
