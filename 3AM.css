@@ -305,16 +305,6 @@
                     padding-bottom: 0px;
                 }
 
-                .connectedAccountContainer__23f00
-                {
-                    margin-top: 0px;
-                }
-                /*remove the verified icon on connections*/
-                .connectedAccountVerifiedIcon_db6dbd
-                {
-                    display:none;
-                }
-
         /*STYLING (Modification of content to fit the theme)*/
         
                 /*add a soft glow to message bar contents, user panel, dms, channel names (in that order)*/
