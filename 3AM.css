@@ -31,8 +31,6 @@
         --mentionhighlightcol: rgb(0, 0, 0);
         --linkcol: rgb(95, 231, 255);
         --highlightcol: rgb(95, 231, 255);
-        --textcolors: white;
-
         /*logic variables*/
         --fixedanimspeed: calc(var(--animspeed) - 0.1s);
 
@@ -108,15 +106,6 @@
 
             /*Link color*/
             --text-link: var(--linkcol);
-
-        /*text*/  
-            --text-normal: var(--textcolors);
-            --interactive-muted: var(--textcolors);
-            --interactive-active: var(--textcolors);
-            --interactive-normal: var(--textcolors);
-            --header-secondary: var(--textcolors);
-            --header-primary: var(--textcolors);
-            --button-outline-danger-text: var(--textcolors);
 
 }
 
