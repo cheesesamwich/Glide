@@ -31,7 +31,7 @@
         --mentionhighlightcol: rgb(0, 0, 0);
         --linkcol: rgb(95, 231, 255);
         --highlightcol: rgb(95, 231, 255);
-        --colortext: white;
+        --text: white;
 
         /*logic variables*/
         --fixedanimspeed: calc(var(--animspeed) - 0.1s);
