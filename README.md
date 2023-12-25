@@ -14,6 +14,7 @@
 #### Ideas
 - Transfer 3AM to a plugin for added support and customisability (eg: color and value config in app) (i'll definitely do this if i can, but vencord plugin docs are bleh so we'll see i guess)
 - Darken and round spotify listen along invites
+- Optimise the selectors to have a better update longevity
 #### Bugs
 - Hovering on a mention message causes it to turn yellow
 - Missing comments on some class recolor lines
