@@ -110,13 +110,13 @@
             --text-link: var(--linkcol);
 
         /*text*/  
-            --text-normal: var(--text);
-            --interactive-muted: var(--text);
-            --interactive-active: var(--text);
-            --interactive-normal: var(--text);
-            --header-secondary: var(--text);
-            --header-primary: var(--text);
-            --button-outline-danger-text: var(--text);
+            --text-normal: var(--textcolors);
+            --interactive-muted: var(--textcolors);
+            --interactive-active: var(--textcolors);
+            --interactive-normal: var(--textcolors);
+            --header-secondary: var(--textcolors);
+            --header-primary: var(--textcolors);
+            --button-outline-danger-text: var(--textcolors);
 
 }
 
