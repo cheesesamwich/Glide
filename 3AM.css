@@ -109,7 +109,14 @@
             /*Link color*/
             --text-link: var(--linkcol);
 
-        /*text*/
+        /*text*/  
+            --text-normal: var(--text);
+            --interactive-muted: var(--text);
+            --interactive-active: var(--text);
+            --interactive-normal: var(--text);
+            --header-secondary: var(--text);
+            --header-primary: var(--text);
+            --button-outline-danger-text: var(--text);
 
 }
 
