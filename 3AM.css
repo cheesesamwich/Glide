@@ -191,8 +191,8 @@
                     left: 3px;
                 }
   
-                /*guild list collapse hover*/
-                .guilds__2b93a
+                /*guild list collapse hover
+                 .guilds__2b93a
                  {
                     width: 10px;
                     transition: width var(--fixedanimspeed) ease 0.1s, opacity var(--fixedanimspeed) ease 0.1s;
@@ -203,7 +203,9 @@
                     width: 65px;
                     opacity: 100;
                 }
-                
+                               
+                */
+
                 
                 /*member list collapse hover*/
                 .container_b2ce9c 
