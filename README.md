@@ -8,7 +8,7 @@ If you want to spy on my shenanigans, I'm pretty active in the Vencord server's 
 
 Anyway, here's a sneak peek (will be updated over time):  
   
-![3AM Plugin Preview](https://media.discordapp.net/attachments/1165110465509195798/1189229338151899246/image.png?ex=659d6721&is=658af221&hm=cb4ae56680ebc2bc9e316236e4f27ee6a2b332936d6fefc62f0a39b6328d326e&=&format=webp&quality=lossless&width=491&height=671)
+![3AM Plugin Preview](https://media.discordapp.net/attachments/1025502404994678926/1189233036131307520/image.png?ex=659d6a92&is=658af592&hm=027d860e94f44b013dee3c91d941ff5d16f8cac800892ac6f0265a91e8f2889b&=&format=webp&quality=lossless&width=514&height=671)
 
 ### Planned Or Potential Features
 
