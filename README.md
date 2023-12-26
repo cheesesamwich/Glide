@@ -1,54 +1,40 @@
-# 3AM
-## It's 3AM. No Light, Just Night.
+**3AM 🌙*
 
-### Features
+Just a quick heads-up: I'm currently working on the 3AM Plugin, introducing features like custom fonts, server animations, and a privacy blur—all configurable within the Discord app. Development will be relatively quiet, but there's some cool stuff in the pipeline.
 
-- Clean rounded style
-- Consistent true black
-- Minimal issues (Refer to the planned or potential features section)
-- Easy and simple customizability
-- Support for select Discord experiments
-- Written with simplicity and understandability in mind
+When the 3AM Plugin is ready, the original 3AM theme will step aside. Unfortunately, support for other modded Discord clients won't be available anymore. The transition will be from detailed code comments to a simpler, user-friendly setup within the plugin.
 
-### Announcement: 3AM Plugin in Development
+If you want to spy on my shenanigans, I'm pretty active in the Vencord server's CSS development channel.
 
-A 3AM Plugin is currently in development with exciting features, including:
-
-- Custom font importing through plugin config
-- Toggling the server and member list animation
-- A new privacy blur feature that blurs potentially sensitive information (usernames, profile pictures, channel names) when not hovered on the client.
-- And much more!
-
-**Note:** With the release of the 3AM Plugin, the theme will be deprecated. This also means that other modded Discord clients will no longer be able to support 3AM. The shift will move from heavily commenting the code to offering a user-friendly plugin configuration. The goal is to enhance user customization through an intuitive configuration UI *within* the plugin.
-
-Stay tuned for updates! Meanwhile, here's a sneak peek:
-![3AM Plugin Preview](https://media.discordapp.net/attachments/1165110465509195798/1188948768599576749/image.png?ex=659c61d4&is=6589ecd4&hm=6f0113b097cc0d02ea84d4c45f6bf20c5ce161119dee008a87c2c3e9f34bd5b7&=&format=webp&quality=lossless&width=616&height=671)
+Anyway, here's a sneak peek (will be updated over time):
+![3AM Plugin Preview](https://media.discordapp.net/attachments/1134844326933954622/1189145889072230490/image.png?ex=659d1969&is=658aa469&hm=6b8ee1d8edc7d5b8bec16a3c3c6be72cf7a59d2873ddb9eaafdd2718b0fce926&=&format=webp&quality=lossless&width=509&height=671)
 
 ### Planned Or Potential Features
 
 #### Ideas
-- Transfer 3AM to a plugin for added support and customizability (e.g., color and value config in-app)
-- Darken and round Spotify Listen Along invites
-- Optimize selectors for better update longevity
+- Moving 3AM to a plugin for better support and customization
+- Making small adjustments to Spotify Listen Along invites for a cleaner look
+- Improving selectors for more reliable updates
 
 #### Bugs
-- Hovering on a mention message causes it to turn yellow
-- Missing comments on some class recolor lines
-- Some online status indicators are vertically stretched
-- Soundmoji experiment search button is the wrong color
-- The custom Maxwell loading screen still displays keybind indicators
+- Adding comments to some class recolor lines
+- Adjusting online status indicators that appear stretched (seemingly fixed, maybe?? I'm not sure, lol)
+- Fixing the color of the Soundmoji experiment search button
+- Maxwell's loading screen still sometimes shows keybind indicators
 
 ### Instructions
 
 #### Vencord Installation
 
-To install 3AM on Vencord:
+To get 3AM vibes on your Vencord:
 
-1. Navigate to settings.
-2. Go to themes.
+1. Go to settings.
+2. Navigate to the themes section.
 3. Click on online themes.
-4. Paste the following URL: `https://raw.githubusercontent.com/cheesesamwich/3AM/main/3AM.css`
+4. Paste this URL: `https://raw.githubusercontent.com/cheesesamwich/3AM/main/3AM.css`
 
 #### Other Client Installation
 
-Currently, there is no documented support for any other modded Discord clients. The theme has been tested on Vencord, but it's expected to work fine elsewhere.
+Currently, there's no documented support for other modded Discord clients. It's tested on Vencord but might work elsewhere.
+
+---
