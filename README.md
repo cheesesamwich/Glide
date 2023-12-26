@@ -1,4 +1,4 @@
-## 3AM 🌙*
+## 3AM 🌙
 
 Just a quick heads-up: I'm currently working on the 3AM Plugin, introducing features like custom fonts, server animations, and a privacy blur—all configurable within the Discord app. Development will be relatively quiet, but there's some cool stuff in the pipeline.
 
