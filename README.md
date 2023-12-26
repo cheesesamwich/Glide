@@ -19,7 +19,7 @@ A 3AM Plugin is currently in development with exciting features, including:
 - A new privacy blur feature that blurs potentially sensitive information (usernames, profile pictures, channel names) when not hovered on the client.
 - And much more!
 
-**Note:** With the release of the 3AM Plugin, the theme will be deprecated. The focus will shift from heavily documenting the code to providing a user-friendly UI for configuration within the plugin.
+**Note:** With the release of the 3AM Plugin, the theme will be deprecated. This also means that other modded Discord clients will no longer be able to support 3AM. The shift will move from heavily commenting the code to offering a user-friendly plugin configuration. The goal is to enhance user customization through an intuitive configuration UI *within* the plugin.
 
 Stay tuned for updates! Meanwhile, here's a sneak peek:
 ![3AM Plugin Preview](https://media.discordapp.net/attachments/1165110465509195798/1188948768599576749/image.png?ex=659c61d4&is=6589ecd4&hm=6f0113b097cc0d02ea84d4c45f6bf20c5ce161119dee008a87c2c3e9f34bd5b7&=&format=webp&quality=lossless&width=616&height=671)
