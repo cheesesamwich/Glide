@@ -8,6 +8,7 @@ Just a quick heads-up: The 3AM Plugin has been released, introducing custom font
 - Making small adjustments to Spotify Listen Along invites for a cleaner look
 - Improving selectors for more reliable updates
 - Automatically reinject the css instead of relying on a button
+- Clean up the plugin code potentially, its very messy since the whole css is stored from within the .tsx
 
 #### Bugs
 - Adding comments to some class recolor lines
