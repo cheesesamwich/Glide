@@ -1,37 +1,34 @@
-# 3AM Theme
-## It's 3AM. No Light, Just Night.
+## 3AM 🌙
 
-### Features
-
-- Clean rounded style
-- Consistent true black
-- Minimal issues (Refer to the planned or potential features section)
-- Easy and simple customizability
-- Support for select Discord experiments
-- Written with simplicity and understandability in mind
+Just a quick heads-up: The 3AM Plugin has been released, introducing custom fonts, server animations, and a privacy blur—all configurable within the Discord app. This also means that the original 3AM theme and support for other modded clients will be depreceated. I'm shifting my focus from heavily documenting the code, to a simpler, user-friendly setup from within the plugin.
 
 ### Planned Or Potential Features
+
 #### Ideas
-- Transfer 3AM to a plugin for added support and customisability (eg: color and value config in app) (i'll definitely do this if i can, but vencord plugin docs are bleh so we'll see i guess)
-- Darken and round spotify listen along invites
-- Optimise the selectors to have a better update longevity
+- Making small adjustments to Spotify Listen Along invites for a cleaner look
+- Improving selectors for more reliable updates
+- Automatically reinject the css instead of relying on a button
+
 #### Bugs
-- Hovering on a mention message causes it to turn yellow
-- Missing comments on some class recolor lines
-- Some online status indicators are vertically stretched
-- Soundmoji experiment search button is the wrong color
-- The custom maxwell loading screen still displays keybind indicators
+- Adding comments to some class recolor lines
+- Adjusting online status indicators that appear stretched (seemingly fixed, maybe?? I'm not sure, lol)
+- Fixing the color of the Soundmoji experiment search button
+- Maxwell's loading screen still sometimes shows keybind indicators
 
 ### Instructions
 
 #### Vencord Installation
 
-To install 3AM on Vencord:
-1. Navigate to settings.
-2. Go to themes.
-3. Click on online themes.
-4. Paste the following URL: `https://raw.githubusercontent.com/cheesesamwich/3AM/main/3AM.css`
+To get 3AM vibes on your Vencord:
+
+1. Follow the [vencord plugin guide](https://github.com/Vendicated/Vencord/blob/main/docs/1_INSTALLING.md) if you havent already.
+2. Download the index.tsx file from the 3AM repository and drag it into `Vencord\Vencord\src\userplugins\3AM`.
+3. Run `pnpm build` from the cmd in your vencord directory.
+4. Restart your discord.
+5. Navigate to your plugins menu and enable the 3AM Plugin. To configure, press the cog icon.
 
 #### Other Client Installation
 
-Currently, there is no documented support for any other modded Discord clients. The theme has been tested on Vencord, but it's expected to work fine elsewhere.
+There is no longer support for other modded Discord clients. 3AM only supports Vencord.
+
+---
