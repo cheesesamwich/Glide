@@ -7,6 +7,7 @@ When the 3AM Plugin is ready, the original 3AM theme will step aside. Unfortunat
 If you want to spy on my shenanigans, I'm pretty active in the Vencord server's CSS development channel.
 
 Anyway, here's a sneak peek (will be updated over time):  
+  
 ![3AM Plugin Preview](https://media.discordapp.net/attachments/1134844326933954622/1189145889072230490/image.png?ex=659d1969&is=658aa469&hm=6b8ee1d8edc7d5b8bec16a3c3c6be72cf7a59d2873ddb9eaafdd2718b0fce926&=&format=webp&quality=lossless&width=509&height=671)
 
 ### Planned Or Potential Features
