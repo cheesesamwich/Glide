@@ -1,6 +1,6 @@
 ## 3AM 🌙
 
-Just a quick heads-up: The 3AM Plugin has been released, introducing custom fonts, server animations, and a privacy blur—all configurable within the Discord app. This also means that the original 3AM theme and support for other modded clients will be depreceated. I'm shifting my focus from heavily documenting the code, to a simpler, user-friendly setup from within the plugin.
+Just a quick heads-up: The 3AM Plugin has been released, introducing custom fonts, animation toggles, and a privacy blur—all configurable within the Discord app. This also means that the original 3AM theme and support for other modded clients will be depreceated. I'm shifting my focus from heavily documenting the code, to a simpler, user-friendly setup from within the plugin.
 
 ### Planned Or Potential Features
 
