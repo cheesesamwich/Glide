@@ -32,4 +32,6 @@ To get 3AM on Vencord:
 
 There is no longer support for other modded Discord clients. 3AM only supports Vencord.
 
----
+#### Preview
+
+![preview](https://i.imgur.com/zizGZiJ.gif)
