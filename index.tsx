@@ -522,5 +522,12 @@ export default definePlugin({
      {  
     injectCSS();
         },
-    stop() {},
+    stop() 
+    {
+        let injectedStyle = document.getElementById("3AMStyleInjection");
+        if(injectedStyle)
+        {
+            injectedStyle.remove();
+        }
+    },  
 });
