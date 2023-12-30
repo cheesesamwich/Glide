@@ -249,7 +249,10 @@ function injectCSS()
                             border-radius: 20px;
                         }      
                         
-
+                        .item__183e8
+                        {
+                          border-radius: 15px;
+                        }
 
                     
 
