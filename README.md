@@ -34,4 +34,4 @@ There is no longer support for other modded Discord clients. 3AM only supports V
 
 #### Preview
 
-![preview](https://i.imgur.com/zizGZiJ.gif)
+![preview](https://i.imgur.com/YT9N8v0.gif)

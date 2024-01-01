@@ -464,7 +464,7 @@ function injectCSS()
 }
 export default definePlugin({
     name: "ThreeAM",
-    description: "Its 3AM. No Light, Just Night. To apply your configurations, save the theme, re open the config, and press load at the bottom.",
+    description: "Its 3AM. No Light, Just Night.",
     authors: [
         {
             id: 976176454511509554n,
@@ -475,56 +475,54 @@ export default definePlugin({
         serverListAnim: {
             type: OptionType.BOOLEAN,
             description: "Toggles if the server list hides when not hovered",
-            default: false
+            default: false,
+            onChange: () => injectCSS()
         },
         memberListAnim: {
             type: OptionType.BOOLEAN,
             description: "Toggles if the member list hides when not hovered",
-            default: true
+            default: true,
+            onChange: () => injectCSS()
         },
         privacyBlur: {
             type: OptionType.BOOLEAN,
             description: "Blurs potentially sensitive information when not tabbed in",
-            default: false
+            default: false,
+            onChange: () => injectCSS()
         },   
         customHomeIcon : {
             type: OptionType.BOOLEAN,
             description: "If the discord home icon gets replaced with the 3AM Moon",
-            default: true
+            default: true,
+            onChange: () => injectCSS()
         },  
         flashBang : {
             type: OptionType.BOOLEAN,
             description: "you dont wanna know",
-            default: false
+            default: false,
+            onChange: () => injectCSS()
         },  
         customFont: {
             type: OptionType.STRING,
             description: "The @import for a custom font (blank to disable)",
-            default: ""
+            default: "",
+            onChange: () => injectCSS()
         },
         animationSpeed: {
             type: OptionType.STRING,
             description: "The speed of animations",
             default: "0.2",
-        },
-        Update: {
-            description: "Updates the theme",
-            type: OptionType.COMPONENT,
-            component: () => (
-                <Button onClick={() => injectCSS()}>
-                    Load
-                </Button>
-            )
-        }
-          
+            onChange: () => injectCSS()
+        } 
     },
     
     patches: [],
-    // Delete these two below if you are only using code patches
+
+    //this functions formatting looks weird. i dont fucking know honestly
     start()
-     {  
-    injectCSS();
-        },
+    { 
+        injectCSS();
+    },
     stop() 
     {
         let injectedStyle = document.getElementById("3AMStyleInjection");
