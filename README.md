@@ -15,6 +15,7 @@ Just a quick heads-up: The 3AM Plugin has been released, introducing custom font
 - Adjusting online status indicators that appear stretched (seemingly fixed, maybe?? I'm not sure, lol)
 - Fixing the color of the Soundmoji experiment search button
 - Maxwell's loading screen still sometimes shows keybind indicators
+- Migrate the theme to a css file if possible and grab the variables from the theme settings? alternatively, migrate to usercss once it gets merged
 
 ### Instructions
 
