@@ -1,21 +1,16 @@
 ## 3AM 🌙
-
-Just a quick heads-up: The 3AM Plugin has been released, introducing custom fonts, animation toggles, and a privacy blur—all configurable within the Discord app. This also means that the original 3AM theme and support for other modded clients will be depreceated. I'm shifting my focus from heavily documenting the code, to a simpler, user-friendly setup from within the plugin.
+### A chill rounded amoled plugin/theme for discord designed to remove all the clutter and flashiness of modern themes. Feel free to suggest or point out anything to me on discord!
 
 ### Planned Or Potential Features
-
 #### Ideas
 - Making small adjustments to Spotify Listen Along invites for a cleaner look
 - Improving selectors for more reliable updates
-- Automatically reinject the css instead of relying on a button
-- Clean up the plugin code potentially, its very messy since the whole css is stored from within the .tsx
 
 #### Bugs
 - Adding comments to some class recolor lines
 - Adjusting online status indicators that appear stretched (seemingly fixed, maybe?? I'm not sure, lol)
 - Fixing the color of the Soundmoji experiment search button
 - Maxwell's loading screen still sometimes shows keybind indicators
-- Migrate the theme to a css file if possible and grab the variables from the theme settings? alternatively, migrate to usercss once it gets merged
 
 ### Instructions
 
