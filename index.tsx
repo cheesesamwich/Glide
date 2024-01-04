@@ -5,7 +5,8 @@ import definePlugin, { OptionType } from "@utils/types";
 import { Clipboard, Toasts } from "@webpack/common";
 import { findComponentByCodeLazy } from "@webpack";
 import { Button, Forms } from "@webpack/common";
-
+import { openModalLazy } from "@utils/modal";
+import PluginModal from "@components/PluginSettings/PluginModal"
 const ColorPicker = findComponentByCodeLazy(".Messages.USER_SETTINGS_PROFILE_COLOR_SELECT_COLOR", ".BACKGROUND_PRIMARY)");
 
 function injectCSS()
@@ -513,7 +514,12 @@ export default definePlugin({
             description: "The speed of animations",
             default: "0.2",
             onChange: () => injectCSS()
-        } 
+        },
+        toasts: {
+            type: OptionType.BOOLEAN,
+            description: "If the vencordtoolbox options use toasts. Warning: they take a while to disappear",
+            default: false
+        },
     },
     
     patches: [],
@@ -531,4 +537,56 @@ export default definePlugin({
             injectedStyle.remove();
         }
     },  
+    toolboxActions: {
+        async "Server Anim Toggle"() {
+            if(Settings.plugins.ThreeAM.toasts)
+            {
+                Toasts.show({
+                    id: Toasts.genId(),
+                    message: "Changed server anim to " + !Settings.plugins.ThreeAM.serverListAnim,
+                    type: Toasts.Type.SUCCESS
+                });                
+            }
+            Settings.plugins.ThreeAM.serverListAnim = !Settings.plugins.ThreeAM.serverListAnim;
+            injectCSS();
+        },
+        async "Member Anim Toggle"() {
+            if(Settings.plugins.ThreeAM.toasts)
+            {
+                Toasts.show({
+                    id: Toasts.genId(),
+                    message: "Changed member anim to " + !Settings.plugins.ThreeAM.memberListAnim,
+                    type: Toasts.Type.SUCCESS
+                });
+            }
+            Settings.plugins.ThreeAM.memberListAnim = !Settings.plugins.ThreeAM.memberListAnim;
+            injectCSS();
+        },
+        async "Privacy Blur Toggle"() {
+            if(Settings.plugins.ThreeAM.toasts)
+            {
+                Toasts.show({
+                    id: Toasts.genId(),
+                    message: "Changed privacy blur to " + !Settings.plugins.ThreeAM.privacyBlur,
+                    type: Toasts.Type.SUCCESS
+                });   
+            }
+
+            Settings.plugins.ThreeAM.privacyBlur = !Settings.plugins.ThreeAM.privacyBlur;
+            injectCSS();
+        },
+        async "Home Icon Toggle"() {
+            if(Settings.plugins.ThreeAM.toasts)
+            {
+                Toasts.show({
+                    id: Toasts.genId(),
+                    message: "Changed custom home icon to " + !Settings.plugins.ThreeAM.customHomeIcon,
+                    type: Toasts.Type.SUCCESS
+                });
+            }
+            Settings.plugins.ThreeAM.customHomeIcon = !Settings.plugins.ThreeAM.customHomeIcon;
+            injectCSS();
+        }
+    },
+
 });
