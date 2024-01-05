@@ -232,6 +232,11 @@ function injectCSS()
                         {
                             background-color: var(--bgcol);
                         }
+                        /* profile sidebar*/
+                        [class="none__51a8f scrollerBase_dc3aa9"]
+                        {
+                            background-color: var(--bgcol) !important;
+                        }
                 /*ROUNDING (rounding)*/
 
                         /*round message bar, some buttons, dm list button, new messages notif bar, channel buttons, emoji menu search bar, context menus, account connections(in that order)*/
@@ -279,8 +284,9 @@ function injectCSS()
                             display:none;
                         }
 
-                        /*Hide the dm favourite, dm close, support, gift buttons, the now playing column, and the channel + favourite icons*/
-                        .favoriteIcon_b001ac, .closeButton__8f1fd, .a[href="https://support.discord.com"], .nowPlayingColumn-1eCBCN, button[aria-label="Send a gift"], .icon_eff5d4, .iconContainer__3f9b0
+
+                        /*Hide user profile button, the dm favourite, dm close, support, gift buttons, the now playing column, and the channel + favourite icons*/
+                        [aria-label="Hide User Profile"], .favoriteIcon_b001ac, .closeButton__8f1fd, [href="https://support.discord.com"], .nowPlayingColumn-1eCBCN, button[aria-label="Send a gift"], .icon_eff5d4, .iconContainer__3f9b0
                         {
                             display :none;
                         }
@@ -303,7 +309,11 @@ function injectCSS()
                         {
                             display: none;
                         }
-
+                        /*hide sidebar connections*/
+                        .profilePanelConnections__3c232
+                        {
+                          display: none;
+                        }
                         /*pad the message bar right slightly. Not sure what caused the buttons to flow out of it, might be something in the theme :shrug:*/         
                         .inner__9fd0b
                         {
@@ -359,8 +369,30 @@ function injectCSS()
                         padding-top: 5px;
                         }
 
+                        /*round banners in profile popout*/
+                        .banner__6d414:not(.panelBanner__90b8a)
+                        {
+                          border-radius: 20px;
+                        }
+                        /*round the user popout*/
+                        .userPopoutOuter_d739b2
+                        {
+                          border-radius: 25px;
+                        }                       
+                        /*round the inner profile popout*/
+                        [class="userPopoutInner_f545a3 userProfileInner__8065b userProfileInnerThemedWithBanner_d5f991"]::before
+                        {
+                        border-radius: 20px;
+                        }
+
                 /*STYLING (Modification of content to fit the theme)*/
-                
+
+                        /*Round and scale down the users banner*/
+                        .panelBanner__90b8a
+                        {
+                        border-radius: 20px;
+                        transform: scale(0.95);
+                        }
                         /*add a soft glow to message bar contents, user panel, dms, channel names (in that order)*/
                         .inner__9fd0b .layout__59abc, .name__8d1ec
                         {
