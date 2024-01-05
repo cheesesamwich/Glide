@@ -1,6 +1,12 @@
 ## 3AM 🌙
 ### A chill rounded amoled plugin/theme for discord designed to remove all the clutter and flashiness of modern themes. Feel free to suggest or point out anything to me on discord!
 
+
+### Features
+- Consistent Amoled colors
+- Minimal issues
+- Built in custom fonts, animation toggling, and more.
+- Full vencord toolbox integration
 ### Planned Or Potential Features
 #### Ideas
 - Making small adjustments to Spotify Listen Along invites for a cleaner look
