@@ -7,8 +7,101 @@ import { findComponentByCodeLazy } from "@webpack";
 import { Button, Forms } from "@webpack/common";
 import { openModalLazy } from "@utils/modal";
 import PluginModal from "@components/PluginSettings/PluginModal"
+import { definePluginSettings } from "@api/Settings";
+import { getTheme, Theme } from "@utils/discord";
+import { Margins } from "@utils/margins";
+import { classes } from "@utils/misc";
 const ColorPicker = findComponentByCodeLazy(".Messages.USER_SETTINGS_PROFILE_COLOR_SELECT_COLOR", ".BACKGROUND_PRIMARY)");
 
+const settings = definePluginSettings({
+    serverListAnim: {
+        type: OptionType.BOOLEAN,
+        description: "Toggles if the server list hides when not hovered",
+        default: false,
+        onChange: () => injectCSS()
+    },
+    memberListAnim: {
+        type: OptionType.BOOLEAN,
+        description: "Toggles if the member list hides when not hovered",
+        default: true,
+        onChange: () => injectCSS()
+    },
+    privacyBlur: {
+        type: OptionType.BOOLEAN,
+        description: "Blurs potentially sensitive information when not tabbed in",
+        default: false,
+        onChange: () => injectCSS()
+    },   
+    customHomeIcon : {
+        type: OptionType.BOOLEAN,
+        description: "If the discord home icon gets replaced with the 3AM Moon",
+        default: true,
+        onChange: () => injectCSS()
+    },  
+    flashBang : {
+        type: OptionType.BOOLEAN,
+        description: "you dont wanna know",
+        default: false,
+        onChange: () => injectCSS()
+    },  
+    customFont: {
+        type: OptionType.STRING,
+        description: "The @import for a custom font (blank to disable)",
+        default: "",
+        onChange: () => injectCSS()
+    },
+    animationSpeed: {
+        type: OptionType.STRING,
+        description: "The speed of animations",
+        default: "0.2",
+        onChange: () => injectCSS()
+    },
+    toasts: {
+        type: OptionType.BOOLEAN,
+        description: "If the vencordtoolbox options use toasts. Warning: they take a while to disappear",
+        default: false
+    },
+    Primary: {
+        type: OptionType.COMPONENT,
+        description: "",
+        default: "000000",
+        component: () => <ColorPick propertyname="Primary"/>
+    },
+    Accent: {
+        type: OptionType.COMPONENT,
+        description: "",
+        default: "313338",
+        component: () => <ColorPick propertyname="Accent"/>
+    },
+    Text: {
+        type: OptionType.COMPONENT,
+        description: "",
+        default: "ffffff",
+        component: () => <ColorPick propertyname="Text"/>
+    },
+});
+
+
+export function ColorPick({ propertyname }: { propertyname: string }) {
+    return (
+      
+            <div className="color-options-container">
+                    <Forms.FormTitle tag="h3">{propertyname}</Forms.FormTitle>
+
+                <ColorPicker
+                    color={parseInt(settings.store[propertyname], 16)}
+                    onChange={(color) =>
+                        {
+                            const hexColor = color.toString(16).padStart(6, "0");
+                            settings.store[propertyname] = hexColor;
+                            injectCSS();
+                        }
+                    }
+                    showEyeDropper={false}
+                />
+            </div>
+    );
+}
 function injectCSS()
 {
     const fontRegex = /family=([^&;,:]+)/;
@@ -102,13 +195,14 @@ function injectCSS()
 
                 /*editable variables. Feel free to mess around with these to your hearts content, i recommend not editing the logic variables unless you have an understanding of css*/
 
-                --accent: rgb(7, 7, 7);
-                --bgcol: rgb(0, 0, 0);
+                --accent: #${Settings.plugins.ThreeAM.Accent};
+                --bgcol: #${Settings.plugins.ThreeAM.Primary};
                 --glowcol: rgb(51, 51, 51);
                 --mentioncol: rgb(0, 0, 0);
                 --mentionhighlightcol: rgb(0, 0, 0);
                 --linkcol: rgb(95, 231, 255);
                 --highlightcol: rgb(95, 231, 255);
+                --text: #${Settings.plugins.ThreeAM.Text};
 
 
             /*COLOR ASSIGNING  (most of these probably effect more than whats commented)*/
@@ -138,6 +232,7 @@ function injectCSS()
 
                     /*color of the background of mention text*/
                     --mention-background: var(--accent);
+                    --input-background: var(--accent);
 
 
                 /*background based*/
@@ -182,7 +277,12 @@ function injectCSS()
 
                     /*Link color*/
                     --text-link: var(--linkcol);
-
+                    --header-primary: var(--text);
+                    --header-secondary: var(--text);
+                    --font-display: var(--text);
+                    --text-normal: var(--text);
+                    --interactive-normal: var(--text);
+                    --white-500: var(--text);
         }
 
 
@@ -504,55 +604,7 @@ export default definePlugin({
             name: "cheesesamwich",
         },
     ],
-    options: {
-        serverListAnim: {
-            type: OptionType.BOOLEAN,
-            description: "Toggles if the server list hides when not hovered",
-            default: false,
-            onChange: () => injectCSS()
-        },
-        memberListAnim: {
-            type: OptionType.BOOLEAN,
-            description: "Toggles if the member list hides when not hovered",
-            default: true,
-            onChange: () => injectCSS()
-        },
-        privacyBlur: {
-            type: OptionType.BOOLEAN,
-            description: "Blurs potentially sensitive information when not tabbed in",
-            default: false,
-            onChange: () => injectCSS()
-        },   
-        customHomeIcon : {
-            type: OptionType.BOOLEAN,
-            description: "If the discord home icon gets replaced with the 3AM Moon",
-            default: true,
-            onChange: () => injectCSS()
-        },  
-        flashBang : {
-            type: OptionType.BOOLEAN,
-            description: "you dont wanna know",
-            default: false,
-            onChange: () => injectCSS()
-        },  
-        customFont: {
-            type: OptionType.STRING,
-            description: "The @import for a custom font (blank to disable)",
-            default: "",
-            onChange: () => injectCSS()
-        },
-        animationSpeed: {
-            type: OptionType.STRING,
-            description: "The speed of animations",
-            default: "0.2",
-            onChange: () => injectCSS()
-        },
-        toasts: {
-            type: OptionType.BOOLEAN,
-            description: "If the vencordtoolbox options use toasts. Warning: they take a while to disappear",
-            default: false
-        },
-    },
+    settings,
     
     patches: [],
 
@@ -569,6 +621,10 @@ export default definePlugin({
             injectedStyle.remove();
         }
     },  
+
+
+
+
     toolboxActions: {
         async "Server Anim Toggle"() {
             if(Settings.plugins.ThreeAM.toasts)
