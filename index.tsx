@@ -337,6 +337,11 @@ function injectCSS()
                         {
                             background-color: var(--bgcol) !important;
                         }
+                        /*Recolor the emoji, gif, and sticker picker selected button*/
+                        .navButtonActive__735cb, .stickerCategoryGenericSelected__44ec4, .categoryItemDefaultCategorySelected__8245a
+                        {
+                            background-color: var(--accent) !important;
+                        }
                 /*ROUNDING (rounding)*/
 
                         /*round message bar, some buttons, dm list button, new messages notif bar, channel buttons, emoji menu search bar, context menus, account connections(in that order)*/
@@ -675,6 +680,6 @@ export default definePlugin({
             Settings.plugins.ThreeAM.customHomeIcon = !Settings.plugins.ThreeAM.customHomeIcon;
             injectCSS();
         }
-    },
+    }
 
 });
