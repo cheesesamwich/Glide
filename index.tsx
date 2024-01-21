@@ -342,6 +342,11 @@ function injectCSS()
                         {
                             background-color: var(--accent) !important;
                         }
+                        /*context menu fix*/
+                        .layerContainer_d5a653
+                        {
+                            background-color: var(--accent) !important;  
+                        }
                 /*ROUNDING (rounding)*/
 
                         /*round message bar, some buttons, dm list button, new messages notif bar, channel buttons, emoji menu search bar, context menus, account connections(in that order)*/
@@ -378,7 +383,7 @@ function injectCSS()
                         {
                             left: 3px;
                         }
-        
+                        
 
 
                 /*CONTENT (Typically changing values or hiding elements)*/
