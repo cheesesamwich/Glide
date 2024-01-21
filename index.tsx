@@ -342,11 +342,6 @@ function injectCSS()
                         {
                             background-color: var(--accent) !important;
                         }
-                        /*context menu fix x2*/
-                        [class="scroller__750f5 thin_b1c063 scrollerBase_dc3aa9"]
-                        {
-                            background-color: var(--accent) !important;  
-                        }
                 /*ROUNDING (rounding)*/
 
                         /*round message bar, some buttons, dm list button, new messages notif bar, channel buttons, emoji menu search bar, context menus, account connections(in that order)*/
