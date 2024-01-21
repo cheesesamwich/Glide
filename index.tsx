@@ -342,8 +342,8 @@ function injectCSS()
                         {
                             background-color: var(--accent) !important;
                         }
-                        /*context menu fix*/
-                        .layerContainer_d5a653
+                        /*context menu fix x2*/
+                        [class="scroller__750f5 thin_b1c063 scrollerBase_dc3aa9"]
                         {
                             background-color: var(--accent) !important;  
                         }
