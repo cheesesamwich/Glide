@@ -578,48 +578,6 @@ function getCSS(fontName)
                 }
                 */
 
-                /*all this is maxwell loading screen*/
-                .ready__61f2f
-                {
-                    scale: 0;
-                }
-
-                .content__0e954::after 
-                {
-                    content: url(https://media.tenor.com/gexfZzl4ZRsAAAAi/maxwell-cat.gif);
-                    position: relative;
-                    display: inline-block;
-                    top: -425px;
-                    left: 100px;
-                    zoom: 0.5;
-                }
-                
-                .tipTitle_a7615c 
-                {
-                    text-transform: none;
-                    font-size: 0px;
-                    font-weight: 200
-                }
-
-                .tipTitle_a7615c::after 
-                {
-                    content: "Loading 3AM";
-                    font-size: 18px
-                }
-                
-                .tip__6e299
-                {
-                    text-transform: none;
-                    font-size: 0px;
-                    font-weight: 500
-                }
-
-                .tip__6e299::after 
-                {
-                    content: "While you wait, heres maxwell!";
-                    font-size: 15px
-                }
-
                 /*pfp uploader crosshair*/
                 .overlayAvatar__7ca47
                 {
