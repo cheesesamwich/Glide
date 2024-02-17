@@ -23,8 +23,8 @@ To get 3AM on Vencord:
 2. Download the index.tsx file from the 3AM repository and drag it into `Vencord\Vencord\src\userplugins\Glide`.
 3. Run `pnpm build` from the cmd in your vencord directory.
 4. Restart your discord.
-5. Navigate to your plugins menu and enable the 3AM Plugin. To configure, press the cog icon.
+5. Navigate to your plugins menu and enable the Plugin. To configure, press the cog icon.
 
 #### Other Client Installation
 
-There is no longer support for other modded Discord clients. 3AM only supports Vencord.
+There is no longer support for other modded Discord clients. Glide only supports Vencord.
