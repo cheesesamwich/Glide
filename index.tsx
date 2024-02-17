@@ -1,18 +1,55 @@
+/*
+ * Vencord, a Discord client mod
+ * Copyright (c) 2024 Vendicated and contributors
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
 
 import { Settings } from "@api/Settings";
-import definePlugin, { OptionType } from "@utils/types";
-import { Clipboard, Toasts } from "@webpack/common";
-import { findComponentByCodeLazy } from "@webpack";
-import { Button, Forms, Menu, Popout, TextInput, useState } from "@webpack/common";
 import { definePluginSettings } from "@api/Settings";
-import { parse } from "path";
-import ErrorBoundary from "@components/ErrorBoundary";
+import definePlugin, { OptionType, StartAt } from "@utils/types";
+import { loadTheme } from "@vap/shiki";
+import { findComponentByCodeLazy } from "@webpack";
 import { findExportedComponentLazy } from "@webpack";
-import { ReactNode } from "react";
-import { openModalLazy } from "@utils/modal";
-import PluginModal from "@components/PluginSettings/PluginModal";
+import { Clipboard, Toasts } from "@webpack/common";
+import { Button, Forms } from "@webpack/common";
 
-const HeaderBarIcon = findExportedComponentLazy("Icon", "Divider");
+
+interface ThemePreset {
+    bgcol: string;
+    accentcol: string;
+    textcol: string;
+}
+
+
+// Define objects with properties matching the ThemePreset interface
+let solarTheme: ThemePreset = {
+    bgcol: "0e2936",
+    accentcol: "0c2430",
+    textcol: "99b0bd"
+};
+
+let amoledTheme: ThemePreset = {
+    bgcol: "000000",
+    accentcol: "020202",
+    textcol: "c0d5e4"
+};
+
+let lofiPurple: ThemePreset = {
+    bgcol: "0e0e36",
+    accentcol: "0e0c30",
+    textcol: "bdbfd8"
+};
+
+let themes = [amoledTheme, solarTheme, lofiPurple];
+
+function LoadPreset()
+{
+    let theme : ThemePreset = themes[settings.store.ColorPreset]
+    settings.store.Primary = theme.bgcol;
+    settings.store.Accent = theme.accentcol;
+    settings.store.Text = theme.textcol;
+    injectCSS();
+}
 
 const ColorPicker = findComponentByCodeLazy(".Messages.USER_SETTINGS_PROFILE_COLOR_SELECT_COLOR", ".BACKGROUND_PRIMARY)");
 
@@ -34,25 +71,25 @@ const settings = definePluginSettings({
         description: "Blurs potentially sensitive information when not tabbed in",
         default: false,
         onChange: () => injectCSS()
-    },   
+    },
     customHomeIcon : {
         type: OptionType.BOOLEAN,
         description: "If the discord home icon gets replaced with the 3AM Moon",
         default: true,
         onChange: () => injectCSS()
-    },  
+    },
     flashBang : {
         type: OptionType.BOOLEAN,
         description: "you dont wanna know",
         default: false,
         onChange: () => injectCSS()
-    },  
+    },
     tooltips : {
         type: OptionType.BOOLEAN,
         description: "If tooltips are displayed in the client",
         default: false,
         onChange: () => injectCSS()
-    },  
+    },
     customFont: {
         type: OptionType.STRING,
         description: "The google fonts @import for a custom font (blank to disable)",
@@ -65,6 +102,12 @@ const settings = definePluginSettings({
         default: "0.2",
         onChange: () => injectCSS()
     },
+    ColorPreset: {
+        type: OptionType.SELECT,
+        description: "A bunch of pre made color presets you can use if you dont feel like making your own :3",
+        options: [{label: "Amoled", value: 0, default: true}, {label: "Solar", value: 1}, {label: "Lofi Purple", value: 2}],
+        onChange: () => {LoadPreset()}
+    },    
     Primary: {
         type: OptionType.COMPONENT,
         description: "",
@@ -83,43 +126,43 @@ const settings = definePluginSettings({
         default: "ffffff",
         component: () => <ColorPick propertyname="Text"/>
     },
-    
-    ExportTheme: 
+
+    ExportTheme:
     {
         type: OptionType.COMPONENT,
         description: "",
         default: "",
-        component: () => <Button onClick={() => 
-            {
-                copyCSS();
-                Toasts.show({
-                    id: Toasts.genId(),
-                    message: "Successfully copied theme!",
-                    type: Toasts.Type.SUCCESS
-                });   
-            }} >Copy The CSS for your current configuration.<h2>You can uninstall the plugin after this if you don't want the customizability.</h2></Button>      
+        component: () => <Button onClick={() =>
+        {
+            copyCSS();
+            Toasts.show({
+                id: Toasts.genId(),
+                message: "Successfully copied theme!",
+                type: Toasts.Type.SUCCESS
+            });
+        }} >Copy The CSS for your current configuration.<h2>You can uninstall the plugin after this if you don't want the customizability.</h2></Button>
     }
 });
 
 
 export function ColorPick({ propertyname }: { propertyname: string }) {
     return (
-      
-            <div className="color-options-container">
-                    <Forms.FormTitle tag="h3">{propertyname}</Forms.FormTitle>
 
-                <ColorPicker
-                    color={parseInt(settings.store[propertyname], 16)}
-                    onChange={(color) =>
-                        {
-                            const hexColor = color.toString(16).padStart(6, "0");
-                            settings.store[propertyname] = hexColor;
-                            injectCSS();
-                        }
-                    }
-                    showEyeDropper={false}
-                />
-            </div>
+        <div className="color-options-container">
+            <Forms.FormTitle tag="h3">{propertyname}</Forms.FormTitle>
+
+            <ColorPicker
+                color={parseInt(settings.store[propertyname], 16)}
+                onChange={color =>
+                {
+                    const hexColor = color.toString(16).padStart(6, "0");
+                    settings.store[propertyname] = hexColor;
+                    injectCSS();
+                }
+                }
+                showEyeDropper={false}
+            />
+        </div>
     );
 }
 
@@ -137,33 +180,33 @@ function parseFontContent()
     const customFontString: string = Settings.plugins.ThreeAM.customFont;
     if(customFontString == null){ return; }
     const fontNameMatch: RegExpExecArray | null = fontRegex.exec(customFontString);
-    const fontName = fontNameMatch ? fontNameMatch[1].replace(/[^a-zA-Z0-9]+/g, ' ') : '';
+    const fontName = fontNameMatch ? fontNameMatch[1].replace(/[^a-zA-Z0-9]+/g, " ") : "";
     return fontName;
 }
 function injectCSS()
 {
 
-    let fontName = parseFontContent();
+    const fontName = parseFontContent();
     console.log("3AM Font name: " + fontName);
     console.log("3AM Font import: " + Settings.plugins.ThreeAM.customFont);
     console.log("3AM Animation speed: " + Settings.plugins.ThreeAM.animationSpeed);
-    let theCSS = getCSS(fontName);
+    const theCSS = getCSS(fontName);
 
     var elementToRemove = document.getElementById("3AMStyleInjection");
     if (elementToRemove) {
         elementToRemove.remove();
     }
-    const styleElement = document.createElement('style');
+    const styleElement = document.createElement("style");
     styleElement.id = "3AMStyleInjection";
     styleElement.textContent = theCSS;
-    document.documentElement.appendChild(styleElement);  
-    console.log("Loaded css, oldElement: " + elementToRemove != null)
+    document.documentElement.appendChild(styleElement);
+    console.log("Loaded css, oldElement: " + elementToRemove != null);
 }
 
 function getCSS(fontName)
 {
-        //for your sanity, just, fucking, collapse this 
-        return `
+    // for your sanity, just, fucking, collapse this
+    return `
         /* IMPORTS */
     
         /* Fonts */
@@ -177,7 +220,7 @@ function getCSS(fontName)
     html
         {
             filter: invert(1);}
-    ` : ``}
+    ` : ""}
     /*Server list animation*/
     ${Settings.plugins.ThreeAM.serverListAnim ? `
     .guilds__2b93a {
@@ -189,7 +232,7 @@ function getCSS(fontName)
         width: 65px;
         opacity: 100;
     }
-    ` : ''}         
+    ` : ""}         
     /*Member list anim toggle*/
     ${Settings.plugins.ThreeAM.memberListAnim ? `
         .container_b2ce9c 
@@ -204,7 +247,7 @@ function getCSS(fontName)
             width: 250px;
             opacity: 1;    
         }
-    ` : ''}
+    ` : ""}
     /*Privacy blur*/
     ${Settings.plugins.ThreeAM.privacyBlur ? `
             .header__39b23,
@@ -223,21 +266,21 @@ function getCSS(fontName)
             body:not(:hover) .layout__59abc {
             filter: blur(5px); 
             }
-    ` : ''}
+    ` : ""}
     /*Privacy blur*/
     ${!Settings.plugins.ThreeAM.tooltips ? `
         [class*="tooltip"]
         {
             display: none !important;
         }
-    ` : ''}
+    ` : ""}
     /*Custom home icon*/
     ${Settings.plugins.ThreeAM.customHomeIcon ? `
     [aria-label="Direct Messages"] .childWrapper__01b9c
     {
         content: url(https://github.com/cheesesamwich/3AM/blob/main/icon.png?raw=true);
     }
-` : ''}
+` : ""}
     /*Root configs*/
     :root
     {
@@ -613,17 +656,18 @@ export default definePlugin({
     ],
     settings,
     start()
-    { 
+    {
         injectCSS();
     },
-    stop() 
+    stop()
     {
-        let injectedStyle = document.getElementById("3AMStyleInjection");
+        const injectedStyle = document.getElementById("3AMStyleInjection");
         if(injectedStyle)
         {
             injectedStyle.remove();
         }
-    }
+    },
+    startAt: StartAt.DOMContentLoaded
 
 });
 
