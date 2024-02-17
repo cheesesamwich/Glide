@@ -1,22 +1,17 @@
-## 3AM 🌙
-### A chill rounded amoled plugin/theme for discord designed to remove all the clutter and flashiness of modern themes. Feel free to suggest or point out anything to me on discord!
+## Glide 🪽 [REBRANDED]
+### A chill rounded plugin/theme for discord designed to remove all the clutter and flashiness of modern themes. Feel free to suggest or point out anything to me on discord!
 
 
 ### Features
-- Consistent Amoled colors
+- Consistent colors
 - Minimal issues
-- Built in custom fonts, animation toggling, and more.
-- Full vencord toolbox integration
+- Built in custom fonts, animation toggling, custom colors, color presets, and more!
 ### Planned Or Potential Features
 #### Ideas
-- Making small adjustments to Spotify Listen Along invites for a cleaner look
 - Improving selectors for more reliable updates
 
 #### Bugs
 - Adding comments to some class recolor lines
-- Adjusting online status indicators that appear stretched (seemingly fixed, maybe?? I'm not sure, lol)
-- Fixing the color of the Soundmoji experiment search button
-- Maxwell's loading screen still sometimes shows keybind indicators
 
 ### Instructions
 
@@ -33,7 +28,3 @@ To get 3AM on Vencord:
 #### Other Client Installation
 
 There is no longer support for other modded Discord clients. 3AM only supports Vencord.
-
-#### Preview
-
-![preview](https://i.imgur.com/YT9N8v0.gif)
