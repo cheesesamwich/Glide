@@ -1,46 +1,91 @@
-/*
- * Vencord, a Discord client mod
- * Copyright (c) 2024 Vendicated and contributors
- * SPDX-License-Identifier: GPL-3.0-or-later
- */
-
 import { Settings } from "@api/Settings";
 import { definePluginSettings } from "@api/Settings";
 import definePlugin, { OptionType, StartAt } from "@utils/types";
-import { loadTheme } from "@vap/shiki";
 import { findComponentByCodeLazy } from "@webpack";
-import { findExportedComponentLazy } from "@webpack";
 import { Clipboard, Toasts } from "@webpack/common";
 import { Button, Forms } from "@webpack/common";
-
+import { Devs } from "@utils/constants";
 
 interface ThemePreset {
     bgcol: string;
     accentcol: string;
     textcol: string;
+    brand: string;
 }
 
 
-// Define objects with properties matching the ThemePreset interface
-let solarTheme: ThemePreset = {
+let solarTheme = {
     bgcol: "0e2936",
     accentcol: "0c2430",
-    textcol: "99b0bd"
+    textcol: "99b0bd",
+    brand: "124057" 
 };
 
-let amoledTheme: ThemePreset = {
+let amoledTheme = {
     bgcol: "000000",
     accentcol: "020202",
-    textcol: "c0d5e4"
+    textcol: "c0d5e4",
+    brand: "070707"
 };
 
-let lofiPurple: ThemePreset = {
+let PurplueTheme = {
     bgcol: "0e0e36",
     accentcol: "0e0c30",
-    textcol: "bdbfd8"
+    textcol: "bdbfd8",
+    brand: "171750" // Purple color from Lofi Purple theme
 };
 
-let themes = [amoledTheme, solarTheme, lofiPurple];
+let oceanTheme = {
+    bgcol: "4E6B7A", // Pastel Teal
+    accentcol: "607D8C", // Slightly Darker Teal
+    textcol: "ccd6dd", // Soft Gray
+    brand: "6f97ac" // Cyanish color from Ocean theme
+};
+
+let mysticForestTheme = {
+    bgcol: "496559", // Pastel Green
+    accentcol: "5C7A6A", // Slightly Darker Green
+    textcol: "AEBBC3", // Soft Gray
+    brand: "558375" // Green color from Mystic Forest theme
+};
+
+let sunsetOrangeTheme = {
+    bgcol: "7D4E3B", // Pastel Orange
+    accentcol: "8d5b46", // Slightly Darker Orange
+    textcol: "cdd9e2", // Soft Gray
+    brand: "ad7861" // Orange color from Sunset Orange theme
+};
+
+let galacticPurpleTheme = {
+    bgcol: "534361", 
+    accentcol: "604e6e", 
+    textcol: "ede3f1",
+    brand: "725a83"
+};
+
+let frostyWhiteTheme = {
+    bgcol: "E0E4E4", 
+    accentcol: "CED3D3", 
+    textcol: "2C3E50", 
+    brand: "ecf0f1" 
+};
+
+
+let lemonLimeTheme = {
+    bgcol: "C7D46D",
+    accentcol: "B4C155",
+    textcol: "161616",
+    brand: "c8ce44"
+};
+
+let rubyRedTheme = {
+    bgcol: "A93226",
+    accentcol: "8E241D",
+    textcol: "fff1d0",
+    brand: "#a72015"
+};
+
+let themes = [amoledTheme, solarTheme, PurplueTheme, oceanTheme, mysticForestTheme, sunsetOrangeTheme, galacticPurpleTheme, frostyWhiteTheme, lemonLimeTheme, rubyRedTheme];
 
 function LoadPreset()
 {
@@ -48,8 +93,28 @@ function LoadPreset()
     settings.store.Primary = theme.bgcol;
     settings.store.Accent = theme.accentcol;
     settings.store.Text = theme.textcol;
+    settings.store.Brand = theme.brand;
     injectCSS();
 }
+
+function mute(hex, amount) {
+    hex = hex.replace(/^#/, '');
+    let bigint = parseInt(hex, 16);
+    let r = (bigint >> 16) & 255;
+    let g = (bigint >> 8) & 255;
+    let b = bigint & 255;
+
+    // Lower the brightness component
+    r = Math.max(r - amount, 0);
+    g = Math.max(g - amount, 0);
+    b = Math.max(b - amount, 0);
+
+    // Convert RGB to hexadecimal format
+    return '#' + ((r << 16) + (g << 8) + b).toString(16).padStart(6, '0');
+}
+
+// Function to darken an RGB color by a certain amount
+
 
 const ColorPicker = findComponentByCodeLazy(".Messages.USER_SETTINGS_PROFILE_COLOR_SELECT_COLOR", ".BACKGROUND_PRIMARY)");
 
@@ -72,12 +137,6 @@ const settings = definePluginSettings({
         default: false,
         onChange: () => injectCSS()
     },
-    customHomeIcon : {
-        type: OptionType.BOOLEAN,
-        description: "If the discord home icon gets replaced with the 3AM Moon",
-        default: true,
-        onChange: () => injectCSS()
-    },
     flashBang : {
         type: OptionType.BOOLEAN,
         description: "you dont wanna know",
@@ -93,7 +152,7 @@ const settings = definePluginSettings({
     customFont: {
         type: OptionType.STRING,
         description: "The google fonts @import for a custom font (blank to disable)",
-        default: "",
+        default: "@import url('https://fonts.googleapis.com/css2?family=Poppins&wght@500&display=swap');",
         onChange: () => injectCSS()
     },
     animationSpeed: {
@@ -105,7 +164,19 @@ const settings = definePluginSettings({
     ColorPreset: {
         type: OptionType.SELECT,
         description: "A bunch of pre made color presets you can use if you dont feel like making your own :3",
-        options: [{label: "Amoled", value: 0, default: true}, {label: "Solar", value: 1}, {label: "Lofi Purple", value: 2}],
+        options: [
+            { label: "Amoled", value: 0, default: true },
+            { label: "Solar", value: 1 },
+            { label: "Purplue", value: 2 },
+            { label: "Ocean", value: 3 },
+            { label: "Mystic Forest", value: 4 },
+            { label: "Sunset Orange", value: 5 },
+            { label: "Galactic Purple", value: 6 },
+            { label: "Frosty White", value: 7 },
+            { label: "Lemon Lime", value: 8 },
+            { label: "Ruby Red", value: 9 }
+        ],
+        
         onChange: () => {LoadPreset()}
     },    
     Primary: {
@@ -119,6 +190,12 @@ const settings = definePluginSettings({
         description: "",
         default: "313338",
         component: () => <ColorPick propertyname="Accent"/>
+    },
+    Brand: {
+        type: OptionType.COMPONENT,
+        description: "",
+        default: "ffffff",
+        component: () => <ColorPick propertyname="Brand"/>
     },
     Text: {
         type: OptionType.COMPONENT,
@@ -140,7 +217,7 @@ const settings = definePluginSettings({
                 message: "Successfully copied theme!",
                 type: Toasts.Type.SUCCESS
             });
-        }} >Copy The CSS for your current configuration.<h2>You can uninstall the plugin after this if you don't want the customizability.</h2></Button>
+        }} >Copy The CSS for your current configuration.</Button>
     }
 });
 
@@ -177,7 +254,7 @@ function copyCSS()
 function parseFontContent()
 {
     const fontRegex = /family=([^&;,:]+)/;
-    const customFontString: string = Settings.plugins.ThreeAM.customFont;
+    const customFontString: string = Settings.plugins.Glide.customFont;
     if(customFontString == null){ return; }
     const fontNameMatch: RegExpExecArray | null = fontRegex.exec(customFontString);
     const fontName = fontNameMatch ? fontNameMatch[1].replace(/[^a-zA-Z0-9]+/g, " ") : "";
@@ -187,121 +264,105 @@ function injectCSS()
 {
 
     const fontName = parseFontContent();
-    console.log("3AM Font name: " + fontName);
-    console.log("3AM Font import: " + Settings.plugins.ThreeAM.customFont);
-    console.log("3AM Animation speed: " + Settings.plugins.ThreeAM.animationSpeed);
     const theCSS = getCSS(fontName);
 
-    var elementToRemove = document.getElementById("3AMStyleInjection");
+    var elementToRemove = document.getElementById("GlideStyleInjection");
     if (elementToRemove) {
         elementToRemove.remove();
     }
     const styleElement = document.createElement("style");
-    styleElement.id = "3AMStyleInjection";
+    styleElement.id = "GlideStyleInjection";
     styleElement.textContent = theCSS;
     document.documentElement.appendChild(styleElement);
-    console.log("Loaded css, oldElement: " + elementToRemove != null);
 }
 
 function getCSS(fontName)
 {
-    // for your sanity, just, fucking, collapse this
     return `
         /* IMPORTS */
     
         /* Fonts */
         @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
-        ${Settings.plugins.ThreeAM.customFont}
+        ${Settings.plugins.Glide.customFont}
 
-/*Settings things*/
-    /*flashbang*/
-    ${Settings.plugins.ThreeAM.flashBang ?`
-    html
-        {
-            filter: invert(1);}
-    ` : ""}
-    /*Server list animation*/
-    ${Settings.plugins.ThreeAM.serverListAnim ? `
-    .guilds__2b93a {
-        width: 10px;
-        transition: width var(--animspeed) ease 0.1s, opacity var(--animspeed) ease 0.1s;
-        opacity: 0;
-    }
-    .guilds__2b93a:hover {
-        width: 65px;
-        opacity: 100;
-    }
-    ` : ""}         
-    /*Member list anim toggle*/
-    ${Settings.plugins.ThreeAM.memberListAnim ? `
-        .container_b2ce9c 
-        {
-            width: 60px;
-            opacity: 0.2;
+    /*Settings things*/
+        /*Server list animation*/
+        ${Settings.plugins.Glide.serverListAnim ? `
+        .guilds__2b93a {
+            width: 10px;
             transition: width var(--animspeed) ease 0.1s, opacity var(--animspeed) ease 0.1s;
-        
+            opacity: 0;
         }
-        .container_b2ce9c:hover 
-        {
-            width: 250px;
-            opacity: 1;    
+        .guilds__2b93a:hover {
+            width: 65px;
+            opacity: 100;
         }
-    ` : ""}
-    /*Privacy blur*/
-    ${Settings.plugins.ThreeAM.privacyBlur ? `
-            .header__39b23,
-            .container__590e2,
-            .title_b7d661,
-            .layout__59abc,
-            [aria-label="Members"] {
-            filter: blur(0); 
-            transition: filter 0.2s ease-in-out; 
+        ` : ""}         
+        /*Member list anim toggle*/
+        ${Settings.plugins.Glide.memberListAnim ? `
+            .container_b2ce9c 
+            {
+                width: 60px;
+                opacity: 0.2;
+                transition: width var(--animspeed) ease 0.1s, opacity var(--animspeed) ease 0.1s;
+            
             }
+            .container_b2ce9c:hover 
+            {
+                width: 250px;
+                opacity: 1;    
+            }
+        ` : ""}
+        /*Privacy blur*/
+        ${Settings.plugins.Glide.privacyBlur ? `
+                .header__39b23,
+                .container__590e2,
+                .title_b7d661,
+                .layout__59abc,
+                [aria-label="Members"] {
+                filter: blur(0); 
+                transition: filter 0.2s ease-in-out; 
+                }
 
-            body:not(:hover) .header__39b23,
-            body:not(:hover) .container__590e2,
-            body:not(:hover) .title_b7d661,
-            body:not(:hover) [aria-label="Members"],
-            body:not(:hover) .layout__59abc {
-            filter: blur(5px); 
+                body:not(:hover) .header__39b23,
+                body:not(:hover) .container__590e2,
+                body:not(:hover) .title_b7d661,
+                body:not(:hover) [aria-label="Members"],
+                body:not(:hover) .layout__59abc {
+                filter: blur(5px); 
+                }
+        ` : ""}
+        /*Tooltips*/
+        ${!Settings.plugins.Glide.tooltips ? `
+            [class*="tooltip"]
+            {
+                display: none !important;
             }
-    ` : ""}
-    /*Privacy blur*/
-    ${!Settings.plugins.ThreeAM.tooltips ? `
-        [class*="tooltip"]
+        ` : ""}
+        /*Root configs*/
+        :root
         {
-            display: none !important;
+            --animspeed: ${Settings.plugins.Glide.animationSpeed + "s"};
+            --font-primary: ${(fontName.length > 0 ? fontName : "Nunito")};        
+            --accent: #${Settings.plugins.Glide.Accent};
+            --bgcol: #${Settings.plugins.Glide.Primary};
+            --text: #${Settings.plugins.Glide.Text};
+            --brand: #${Settings.plugins.Glide.Brand};
+            --mutedtext: ${mute(Settings.plugins.Glide.Text, 30)};
         }
-    ` : ""}
-    /*Custom home icon*/
-    ${Settings.plugins.ThreeAM.customHomeIcon ? `
-    [aria-label="Direct Messages"] .childWrapper__01b9c
-    {
-        content: url(https://github.com/cheesesamwich/3AM/blob/main/icon.png?raw=true);
-    }
-` : ""}
-    /*Root configs*/
-    :root
-    {
-        --animspeed: ${Settings.plugins.ThreeAM.animationSpeed + "s"};
-        --font-primary: ${(fontName.length > 0 ? fontName : "Nunito")}
-    }
 :root
 {
 
     /*VARIABLES*/
 
         /*editable variables. Feel free to mess around with these to your hearts content, i recommend not editing the logic variables unless you have an understanding of css*/
-
-        --accent: #${Settings.plugins.ThreeAM.Accent};
-        --bgcol: #${Settings.plugins.ThreeAM.Primary};
-        --glowcol: rgb(51, 51, 51);
+        --glowcol: rgba(0, 0, 0, 0);
         --mentioncol: rgb(0, 0, 0);
         --mentionhighlightcol: rgb(0, 0, 0);
         --linkcol: rgb(95, 231, 255);
         --highlightcol: rgb(95, 231, 255);
-        --text: #${Settings.plugins.ThreeAM.Text};
+
 
 
     /*COLOR ASSIGNING  (most of these probably effect more than whats commented)*/
@@ -312,7 +373,8 @@ function getCSS(fontName)
             --button-secondary-background: var(--accent);
             
             /*also buttons*/
-            --brand-experiment: var(--accent);
+            --brand-experiment: var(--brand);
+            --brand-experiment-560: var(--brand);
             
             /*message bar*/
             --channeltextarea-background: var(--accent);
@@ -332,6 +394,9 @@ function getCSS(fontName)
             /*color of the background of mention text*/
             --mention-background: var(--accent);
             --input-background: var(--accent);
+
+            /*the side profile thingy*/
+            --profile-body-background-color: var(--accent);
 
 
         /*background based*/
@@ -377,7 +442,9 @@ function getCSS(fontName)
             --header-secondary: var(--text);
             --font-display: var(--text);
             --text-normal: var(--text);
-            --interactive-normal: var(--text);
+            --text-muted: var(--mutedtext);
+            --channels-default: var(--mutedtext);
+            --interactive-normal: var(--text) !important;
             --white-500: var(--text);
 }
 
@@ -624,7 +691,7 @@ function getCSS(fontName)
                 /*pfp uploader crosshair*/
                 .overlayAvatar__7ca47
                 {
-                background-image: url(https://raw.githubusercontent.com/cheesesamwich/3AM/main/crosshair.png);
+                background-image: url(https://raw.githubusercontent.com/cheesesamwich/Glide/main/crosshair.png);
                 background-repeat: no-repeat;
                 background-position-x: 50%;
                 background-position-y: 50%;
@@ -646,13 +713,11 @@ function getCSS(fontName)
 `;
 }
 export default definePlugin({
-    name: "ThreeAM",
-    description: "Its 3AM. No Light, Just Night.",
-    authors: [
-        {
-            id: 976176454511509554n,
-            name: "cheesesamwich",
-        },
+    name: "Glide",
+    description: "A sleek, rounded theme for discord.",
+    authors:
+    [
+        Devs.Samwich
     ],
     settings,
     start()
@@ -661,7 +726,7 @@ export default definePlugin({
     },
     stop()
     {
-        const injectedStyle = document.getElementById("3AMStyleInjection");
+        const injectedStyle = document.getElementById("GlideStyleInjection");
         if(injectedStyle)
         {
             injectedStyle.remove();
