@@ -11,8 +11,7 @@
 - Improving selectors for more reliable updates
 
 #### Bugs
-- Adding comments to some class recolor lines
-
+- Some lines arent commented
 ### Instructions
 
 #### Vencord Installation
