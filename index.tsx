@@ -36,7 +36,14 @@ let indigoTheme = {
     brand: "171750" 
 };
 
-//this theme feels off, subject to change when i can be bothered probably.
+let grapeFruitTheme = {
+    bgcol: "8a2b5f",
+    accentcol: "812658",
+    textcol: "ffedfb",
+    brand: "b23982" 
+};
+
+
 let crimsonTheme= {
     bgcol: "410b05",
     accentcol: "360803",
@@ -47,7 +54,7 @@ let crimsonTheme= {
 
 let setPreset;
 
-let themes = [amoledTheme, solarTheme, indigoTheme, crimsonTheme];
+let themes = [amoledTheme, solarTheme, indigoTheme, grapeFruitTheme, crimsonTheme];
 
 function LoadPreset()
 {
@@ -120,7 +127,8 @@ const settings = definePluginSettings({
             { label: "Amoled", value: 0, default: true },
             { label: "Solar", value: 1 },
             { label: "Indigo", value: 2 },
-            { label: "Crimson", value: 3}
+            { label: "Grapefruit", value: 3},
+            { label: "Crimson", value: 4}
         ],
         
         onChange: () => {LoadPreset()}
@@ -468,6 +476,16 @@ function getCSS(fontName)
                 .button__3ecb4
                 {
                     background-color: var(--mutedaccent) !important;
+                }
+                /*uhhhhhhhhhhhhhhh*/
+                .headerText__051c0
+                {
+                    color: var(--text) !important;
+                }
+                /*message bar placeholder*/
+                .placeholder_e68c63
+                {
+                    color: var(--mutedtext) !important
                 }
 
         /*ROUNDING (rounding)*/
