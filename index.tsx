@@ -296,6 +296,7 @@ function getCSS(fontName)
             --brand: #${Settings.plugins.Glide.Brand};
             --mutedtext: ${mute(Settings.plugins.Glide.Text, 30)};
             --mutedbrand: ${mute(Settings.plugins.Glide.Brand, 30)};
+            --mutedaccent: ${mute(Settings.plugins.Glide.Accent, 3)};
         }
 :root
 {
@@ -453,6 +454,22 @@ function getCSS(fontName)
                 {
                     background-color: var(--accent) !important;
                 }
+
+                /*side profile bar*/
+                [class="none__3919e scrollerBase__2b744"]
+                {
+                    background-color: var(--bgcol) !important;
+                }
+                .userPanelOverlayBackground__34fc8, .badgeList_ef4131, .menu_dc52c6
+                {
+                    background-color: var(--accent) !important;
+                    border-radius: 15px !important;
+                }
+                .button__3ecb4
+                {
+                    background-color: var(--mutedaccent) !important;
+                }
+
         /*ROUNDING (rounding)*/
 
                 /*round message bar, some buttons, dm list button, new messages notif bar, channel buttons, emoji menu search bar, context menus, account connections(in that order)*/
@@ -489,7 +506,6 @@ function getCSS(fontName)
                 {
                     left: 3px;
                 }
-                
 
 
         /*CONTENT (Typically changing values or hiding elements)*/
