@@ -95,12 +95,6 @@ const settings = definePluginSettings({
         default: false,
         onChange: () => injectCSS()
     },
-    flashBang : {
-        type: OptionType.BOOLEAN,
-        description: "you dont wanna know",
-        default: false,
-        onChange: () => injectCSS()
-    },
     tooltips : {
         type: OptionType.BOOLEAN,
         description: "If tooltips are displayed in the client",
