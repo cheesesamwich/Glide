@@ -11,13 +11,12 @@
 - Improving selectors for more reliable updates
 
 #### Bugs
-- Adding comments to some class recolor lines
-
+- Some lines arent commented
 ### Instructions
 
 #### Vencord Installation
 
-To get 3AM on Vencord:
+To get Glide on Vencord:
 
 1. Follow the [vencord plugin guide](https://github.com/Vendicated/Vencord/blob/main/docs/1_INSTALLING.md) if you havent already.
 2. Download the index.tsx file from the 3AM repository and drag it into `Vencord\Vencord\src\userplugins\Glide`.
