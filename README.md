@@ -1,6 +1,10 @@
-## Glide 🪽 [REBRANDED]
+## Glide 🪽
 ### A chill rounded plugin/theme for discord designed to remove all the clutter and flashiness of modern themes. Feel free to suggest or point out anything to me on discord!
 
+
+*ps, this got majorly fucked in the ass by discords class changed because i was stupid. hindsight is 20/20 i guess, probably wont get updated for a long time (if ever)*
+
+if anyone wants to fix it, ill gradly accept the pr tho :P
 
 ### Features
 - Consistent colors
